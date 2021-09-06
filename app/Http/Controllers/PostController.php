@@ -44,7 +44,7 @@ class PostController extends Controller
 
         Post::create($request->all());
 
-        return redirect()->route('posts.index')->with('success','Post created successfully.');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -55,7 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        
     }
 
     /**
@@ -85,7 +85,7 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('posts.index')->with('success','Post updated successfully');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -97,6 +97,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('posts.index')->with('success','post deleted successfully');
+        return redirect()->route('posts.index');
     }
 }
