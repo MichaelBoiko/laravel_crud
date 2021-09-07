@@ -18,6 +18,7 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->description }}</td>
                             <td>
+                                <button href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#show<?= $post->id; ?>">Show</button>
                                 <button href="" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit<?= $post->id; ?>">Edit</button>
                                 <button href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?= $post->id; ?>">Delete</button>
                             </td>
@@ -56,7 +57,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Delete? {{ $post->title }}</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete task? {{ $post->title }}</h5>
                                         </button>
                                     </div>
                                     <div class="modal-footer">
@@ -101,6 +102,28 @@
                     </div>
                 </div>
                 <!-- End Modal create-->
+                <!-- Modal read-->
+                <div class="modal fade" id="show<?= $post->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <table class="table table-striped table-hower table-success text-center">
+                                    <thead class="table-dark">
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ $post->title }}</td>
+                                            <td>{{ $post->description }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal read-->
             </div>
         </div>
 
